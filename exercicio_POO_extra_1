@@ -1,0 +1,27 @@
+# a) abastecerPorValor( ) – método onde é informado o valor a ser abastecido
+#  e mostra a quantidade de litros que foi colocada no veículo
+
+# Gasolina comum (litro) - R$ .
+'''
+
+   
+
+
+       2º Possua no mínimo esses métodos:
+       
+
+        b) abastecerPorLitro( ) – método onde é informado a quantidade em litros de combustível e mostra o valor a ser pago pelo cliente.
+
+        c) alterarValor( ) – altera o valor do litro do combustível.
+    
+        d) alterarCombustivel( ) – altera o tipo do combustível.
+
+        e) alterarQuantidadeCombustivel( ) – altera a quantidade de combustível restante na bomba.
+
+        OBS: Sempre que acontecer um abastecimento é necessário atualizar a quantidade de combustível total na bomba.
+'''
+
+
+class bmbcmbstvl:
+    def __init__(self, tp):
+        self.tp = tp

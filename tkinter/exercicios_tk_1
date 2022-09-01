@@ -1,0 +1,42 @@
+from tkinter import *# importando as funções do tkinter
+
+janela = Tk() # aplicando essas funçõews para uma variavel,paara chama-la depois
+
+janela.title("calcular area de um triangulo") # dando titulo a 'janela' que vai ser criada
+janela.geometry("400x200") # definindo o tamanho da janela
+janela.configure(background='#dde') # definindo o fundo da janela
+
+Label(janela, text='base:', background='#fff', foreground='#009', # criando uma caixinha de texto e definindo o que vai estar escrito nela
+      anchor=W).place(x=10, y=10, width=100, height=20) #definindo onde o texto se  encronta e onde essa caixa se encontra
+ 
+vAlt = Entry(janela) # cria uma caixinha de texto que alguém escreve para dar valor a variavel
+vAlt.place(x=120, y=10, width=200, height=20) # defini onde ela se encontra
+
+Label(janela, text='alt:', background='#fff', foreground='#009', # criando uma caixinha de texto e definindo o que vai estar escrito nela
+      anchor=W).place(x=10, y=40, width=100, height=20) # definido onde ela vai ficar
+
+vBase = Entry(janela) # uma caixinha de texto que recebe as info que forem informadas
+
+vBase.place(x=120, y=40, width=200, height=20) # localização da caixinha de texto
+
+
+Label(janela, text='Resposta: ', background='#fff', foreground='#009', # cria uma caixa com o texto pre definido
+      anchor=W).place(x=10, y=100, width=100, height=20) # define ondeesse texto sera localizado
+
+lblResp = Label(janela, text=' ', background='#fff', # cria uma variavel para receber um texto
+                anchor=W)
+lblResp.place(x=120, y=100, width=200, height=20) #define onde essa variavel se encontra
+vCalculo = 0 # define uma variavel para ser usada na função 
+
+
+def calculo(): # é criada para que o botão funcione
+    base = float(vBase.get()) # da a variavel o valor inserido pelo usuario
+    alt = float(vAlt.get()) # da a variavel o valor inserido pelo usuario
+    vCalculo = base * alt # calculo o valor das variaveis e da a outra variavel
+    lblResp['text'] = 'A area do retangulo é {} '.format(vCalculo) # mostra a resposta que foi encontrada pelo calculo
+
+
+Button(janela, text='Calcular', command=calculo).place( # define o que está escrito no botão e o que ele faz
+    x=325, y=100, width=55, height=20) # define onde o botão se encontra
+
+mainloop() # faz o codigo se repetir sem parar

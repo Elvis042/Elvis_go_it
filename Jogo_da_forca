@@ -1,0 +1,130 @@
+from tkinter import *
+'''
+ ° ter um programa que tenha uma palavra pré definida pelo programador
+ ° mostrar o numero de letras na tela
+ ° tentativas menor ou igual a 6
+ ° as letras devem aparecer em seus devidos lugares 
+ ° letras erradas devem aparecer 
+ ° terminar o programa se acertar a palavra secreta ou errar 6x
+ ° aviso se ganhou ou se foi enforcado
+  O
+ /|\
+ / \
+
+    while cont_forca <= 2:
+      nmr_letras = len(forca)
+        i = 1
+        for i in nmr_letras:
+            print(forca)
+
+            cont_forca = 3
+
+
+'''
+
+
+def Msg(texto, xy, yx, tamanho, alt):
+
+    return Label(janela, text=texto,
+                 anchor=NW, background='#fff').place(x=xy, y=yx, width=tamanho, height=alt)
+
+
+janela = Tk()  # dando propriedades do tkinter
+
+janela.title("Jogo da forca")
+janela.geometry("700x500")
+janela.configure(background='#dde')
+
+titulo = ' BEM VINDO AO JOGO DA FORCA! '
+lcl_X = 230
+lcl_Y = 10
+tmnh = 200
+ltr = 20
+Msg(titulo, lcl_X, lcl_Y, tmnh, ltr)
+
+dev_player = 'você é jogador ou desenvolvedor? digite 1 para jogador ou 2 para desenvolvedor:'
+lcl_X = 230
+lcl_Y = 180
+ltr = 40
+tmnh = 250
+Msg(dev_player, lcl_X, lcl_Y, tmnh, ltr)
+Label(janela, text='',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)
+'''
+vResp = Entry(janela)#
+vResp.place(x=230, y=230, width=250, height=20)#
+
+forca = ['exercito']#
+
+cont = 3 #
+senha = '123456' #
+
+while cont >= 1: #
+    cont_forca = 0#
+    if vResp== 2:#
+
+        Label(janela, text='digite sua senha :',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)#
+        vResp = Entry(janela)
+        vResp.place(x=230, y=230, width=250, height=20)#
+        senha_comparada = vResp#
+
+        if senha == senha_comparada:#
+
+            Label(janela, text='se deseja mudar a palavra secreta digite 1\n se não digite 2:',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)#
+            
+            vResp = Entry(janela)#
+            vResp.place(x=230, y=230, width=250, height=20)#
+            mudar = vResp#
+            cont_confirm = 0#
+            if mudar == 1:#
+
+                while cont_confirm <= 3:#
+
+                    forca_backup = forca#
+                    Label(janela, text='digite a nova palavra secreta :',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)#
+
+                    vResp = Entry(janela)#
+                    vResp.place(x=230, y=230, width=250, height=20)#
+                    forca = vResp#
+
+                    Label(janela, text='tem certeza que "{}" sera a nova palavra secreta, digite 1 se sim ou 2 se não:',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40).format(forca)#
+                    vResp = Entry(janela)#
+                    vResp.place(x=230, y=230, width=250, height=20)#
+
+                    confirm = vResp#
+
+                    if confirm == 1:#
+
+                        Label(janela, text='tenha um bom jogo',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)#
+                        cont_confirm = 4
+
+                    elif confirm == 2:
+                        Label(janela, text='ok, a palavra chave foi restaurada',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)#
+                        forca = forca_backup#
+                    else:
+                        Label(janela, text='essa não é uma das opções, tente novamente',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)
+            else:#
+                Label(janela, text='a palavra secreta permanesce a mesma',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)
+        else:
+            cont -= 1
+            Label(janela, text='senha incorreta, tente novamente \nvocê tem mais {} tentativas',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40).format(cont)
+
+    elif vResp == 1:
+        Label(janela, text='tenha um bom jogo',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)
+        cont = 0
+
+    else:
+        Label(janela, text='essa não é uma das opções, tente novamente',
+      anchor=NW, background='#fff').place(x=230, y=180, width=250, height=40)
+'''
+mainloop()

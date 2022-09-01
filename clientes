@@ -1,0 +1,44 @@
+class Pessoa:
+    def __init__(self, nome, sobrenome, cpf):
+        self.__nome = nome
+        self.__sobrenome = sobrenome
+        self.__cpf = cpf
+
+    def nome_completo(self):
+        return f'{self.__nome} {self.__sobrenome}'
+
+
+class Cliente(Pessoa):
+    def __init__(self, nome, sobrenome, cpf, renda):
+        super().__init__(nome, sobrenome, cpf)
+        self.__renda = renda
+
+    def nome_completo(self):
+        return f'Nome: {self._Pessoa__nome} {self._Pessoa__sobrenome} \nrenda: {self.__renda}'
+
+
+class Funcionario(Pessoa):
+    def __init__(self, nome, sobrenome, cpf, matricula):
+        super().__init__(nome, sobrenome, cpf)
+        self.__matricula = matricula
+
+    def nome_completo(self):
+        print('Nome: {} {} \nmatricula: {}'.format(self._Pessoa__nome,self._Pessoa__sobrenome,self.__matricula))
+
+
+nome_C = input('digite seu nome :')
+sbrnm_c = input('digite seu sobrenome :')
+cpf_c = input('digite seu CPF :')
+renda_c = int(input('informe sua renda :'))
+matricula_f = 12344
+
+cliente1 = Cliente(nome_C, sbrnm_c, cpf_c, renda_c)
+
+nome_f = input('digite o nome do funcionario :')
+sbrnm_f = input('digite o sobrenome do funcionario :')
+cpf_F = input('digite o CPF do funcionario :')
+
+funcionario1 = Funcionario(nome_f, sbrnm_f, cpf_F, matricula_f)
+
+print(cliente1.nome_completo())
+print(funcionario1.nome_completo())

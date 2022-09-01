@@ -1,0 +1,59 @@
+from inspect import _void
+
+
+class Aluno:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def info(self):
+        print(str(self.nome))
+
+
+class Disciplina():
+    def __init__(self, materia):
+        self.materia = materia
+
+    def info(self):
+        print(str(self.materia))
+
+# noinspection PyArgumentList
+
+
+class Prova(Aluno, Disciplina):
+    def __init__(self, nome, materia, nota):
+        Aluno.__init__(self, nome)
+        Disciplina.__init__(self, materia)
+        self.nota = nota
+
+    def info(self):
+        Aluno.info(self)
+        Disciplina.info(self)
+        print(float(self.nota))
+
+
+A1 = 'gustavo'
+A2 = 'ray'
+A3 = 'Anne'
+
+D1 = 'Portugues'
+D2 = 'matematica'
+
+prova_1 = Prova(A1, D1, 3)
+prova_2 = Prova(A1, D2, 10)
+prova_3 = Prova(A2, D1, 8)
+prova_4 = Prova(A2, D2, 9)
+prova_5 = Prova(A3, D1, 0.5)
+prova_6 = Prova(A3, D2, 0)
+
+print(prova_1.info())
+print('\n')
+print(prova_2.info())
+print('\n')
+print(prova_3.info())
+print('\n')
+print(prova_4.info())
+print('\n')
+print(prova_5.info())
+print('\n')
+print(prova_6.info())
+print('\n')

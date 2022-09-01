@@ -1,0 +1,94 @@
+from tkinter import *
+'''
+Possua uma classe chamada bombaCombustível, com no mínimo esses atributos:
+tipoCombustivel.
+valorLitro
+quantidadeCombustivel
+'''
+janela = Tk()  # dando propriedades do tkinter
+
+
+def Msg(texto, Fonte, xy, yx, tamanho, alt):
+
+    return Label(janela, text=texto, font=Fonte, bd=1, relief='solid',
+                 anchor=NW, background='#fff').place(x=xy, y=yx, width=tamanho, height=alt)
+
+
+janela.title("posto virtual")
+janela.geometry("720x500")
+janela.configure(background='#dde')
+
+Label(janela, text='SEJA BEM VINDO AO \nPOSTO VIRTUAL', font='ariel 14',
+      anchor=NW, background='#dde', foreground='orange').place(x=255, y=20, width=210, height=60)
+
+Msg('você quer que coloque quantos reais no tank?', 7, 20, 90, 324, 30)
+
+lblPer = Entry(janela,font=7)
+lblPer.place(x=380, y=90, width=200, height=30)
+
+
+class bmbCombustivel:
+    def __init__(self, tp_Cmbstvs, vlr_litro, qtde_combustivel):
+        self.tp_Cmbstvs = tp_Cmbstvs
+        self.vlr_litro = vlr_litro
+        self.qtde_combustivel = qtde_combustivel
+        
+    def calculo(self):
+        pago = float(lblPer.get())
+        ltr_valor = float(pago / litro_var1)
+        guardado_cmbstvl -= ltr_valor
+        lblresp_txt = Label(janela, text='você tera essa quantia de litros de gasolina', background='#fff')
+        lblresp_txt.place(x=20, y=300, width=280, height=30)
+
+        lblresp_txt_qtde = Label(janela, text='ainda tem :', background='#fff',anchor=W)
+        lblresp_txt_qtde.place(x=380, y=300, width=70, height=30)
+
+        Label(janela, text=guardado_cmbstvl, background='#fff',font=7,anchor=W).place(x=400, y=300, width=70, height=30)
+
+        lblresp = Label(janela, text=' ', background='#fff',anchor=W)
+        lblresp.place(x=350, y=300, width=24, height=30)
+        lblresp['text'] = '{}'.format(ltr_valor)
+         
+
+bomba1 = bmbCombustivel('gasolina', 6.74, 800)
+litro_var1 = bomba1.vlr_litro
+guardado_cmbstvl = bomba1.qtde_combustivel
+
+def calculo1():
+    bomba1.calculo()
+
+bomba2 = bmbCombustivel('etanol', 4.12, 600)
+
+
+
+
+
+Button(janela, text='Calcular', font=12, command=calculo1).place(
+    x=380, y=150, width=65, height=30)
+
+
+# a) abastecerPorValor( ) – método onde é informado o valor a ser abastecido
+#  e mostra a quantidade de litros que foi colocada no veículo
+
+# Gasolina comum (litro) - R$ .
+'''
+
+   
+
+
+       2º Possua no mínimo esses métodos:
+       
+
+        b) abastecerPorLitro( ) – método onde é informado a quantidade em litros de combustível e mostra o valor a ser pago pelo cliente.
+
+        c) alterarValor( ) – altera o valor do litro do combustível.
+    
+        d) alterarCombustivel( ) – altera o tipo do combustível.
+
+        e) alterarQuantidadeCombustivel( ) – altera a quantidade de combustível restante na bomba.
+
+        OBS: Sempre que acontecer um abastecimento é necessário atualizar a quantidade de combustível total na bomba.
+'''
+
+
+mainloop()
